@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Card, Table, Select, Input, Button, Badge, Menu } from 'antd';
+import { Card, Table, Select, Input, Button, Menu } from 'antd';
 import ProductListData from "assets/data/product-list.data.json"
 import { EyeOutlined, DeleteOutlined, SearchOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import AvatarStatus from 'components/shared-components/AvatarStatus';
@@ -26,7 +26,7 @@ const { Option } = Select
 
 const categories = ['Cloths', 'Bags', 'Shoes', 'Watches', 'Devices']
 
-const ProductList = () => {
+const ExpenseDetail = () => {
 	let history = useHistory();
 	const [list, setList] = useState(ProductListData)
 	const [selectedRows, setSelectedRows] = useState([])
@@ -181,7 +181,7 @@ const ProductList = () => {
 					</div>
 				</Flex>
 				<div>
-					<Button onClick={addProduct} type="primary" icon={<PlusCircleOutlined />} block>Añadir Ingreso</Button>
+					<Button onClick={addProduct} type="primary" icon={<PlusCircleOutlined />} block>Añadir Egreso</Button>
 				</div>
 			</Flex>
 			<div className="table-responsive">
@@ -201,4 +201,4 @@ const ProductList = () => {
 	)
 }
 
-export default ProductList
+export default ExpenseDetail

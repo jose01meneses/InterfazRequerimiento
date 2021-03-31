@@ -1,27 +1,21 @@
-import React, { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { Redirect, Route, Switch } from 'react-router-dom';
 import Loading from 'components/shared-components/Loading';
+import Personal from './personal';
+import Business from './business';
+import ProfessionalServices from './professional-services';
 
 const Dashboards = ({ match }) => {
   return(
     <Suspense fallback={<Loading cover="content"/>}>
       <Switch>
-        <Route path={`${match.url}/ingresos`} component={lazy(() => import(`./product-list`))} />
-        <Route path={`${match.url}/ingresos`} component={lazy(() => import(`./product-list`))} />
-        <Redirect from={`${match.url}`} to={`${match.url}/default`} />
+        <Route path={`${match.url}/personal`} component={Personal} />
+        <Route path={`${match.url}/business`} component={Business} />
+        <Route path={`${match.url}/professional-services`} component={ProfessionalServices} />
+        <Redirect from={`${match.url}`} to={`${match.url}/personal`} />
       </Switch>
     </Suspense>
   )
-  /*return(
-  <Suspense fallback={<Loading cover="content"/>}>
-    <Switch>
-      <Route path={`${match.url}/default`} component={lazy(() => import(`./default`))} />
-      <Route path={`${match.url}/analytic`} component={lazy(() => import(`./analytic`))} />
-      <Route path={`${match.url}/sales`} component={lazy(() => import(`./sales`))} />
-      <Route path={`${match.url}/product-list`} component={ProductList} />
-      <Redirect from={`${match.url}`} to={`${match.url}/default`} />
-    </Switch>
-  </Suspense>
-  )*/};
+};
 
 export default Dashboards;
