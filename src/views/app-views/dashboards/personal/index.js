@@ -13,7 +13,7 @@ const Personal = ({ match }) => {
         <Route path={`${match.url}/general-balance`} component={GeneralBalance} />
         <Route path={`${match.url}/revenue`} component={Revenue} />
         <Route path={`${match.url}/expense`} component={Expense} />
-        <Redirect from={`${match.url}`} to={`${match.url}/default`} />
+        <Redirect from={`${match.url}`} to={`${match.url}/general-balance`} />
       </Switch>
     </Suspense>
   )
