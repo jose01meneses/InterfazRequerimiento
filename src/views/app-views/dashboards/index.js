@@ -4,6 +4,7 @@ import Loading from 'components/shared-components/Loading';
 import Personal from './personal';
 import Business from './business';
 import ProfessionalServices from './professional-services';
+import Blog from './blog';
 
 const Dashboards = ({ match }) => {
   return(
@@ -12,6 +13,7 @@ const Dashboards = ({ match }) => {
         <Route path={`${match.url}/personal`} component={Personal} />
         <Route path={`${match.url}/business`} component={Business} />
         <Route path={`${match.url}/professional-services`} component={ProfessionalServices} />
+        <Route path={`${match.url}/blog`} component={Blog} />
         <Redirect from={`${match.url}`} to={`${match.url}/personal`} />
       </Switch>
     </Suspense>

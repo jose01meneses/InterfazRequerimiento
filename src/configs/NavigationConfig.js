@@ -224,7 +224,21 @@ const dashBoardNavTree = [{
       
 
     ]
-  }]
+  },
+//Blog
+{
+  
+  key: 'dashboards-blog',
+  path: `${APP_PREFIX_PATH}/dashboards/blog`,
+  title: 'sidenav.dashboard.blog',
+  icon: DashboardOutlined,
+  breadcrumb: false,
+  submenu: []
+
+}
+
+
+]
 }]
 
 
