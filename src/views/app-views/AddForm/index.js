@@ -111,10 +111,11 @@ const ProductForm  = props =>   {
 							/>
 				<div className="container">
 						<Flex className="py-2" mobileFlex={false} justifyContent="between" alignItems="center">
-						<Button className="mr-2">Cancelar</Button>
+					
 								<Button type="primary" onClick={() => onFinish()} htmlType="submit" loading={submitLoading} >
 									Agregar 
-						</Button>				
+						</Button>	
+						<Button className="mr-2">Cancelar</Button>			
 						</Flex>
 				</div>
 				</PageHeaderAlt>
