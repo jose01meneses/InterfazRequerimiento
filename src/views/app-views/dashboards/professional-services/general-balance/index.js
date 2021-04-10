@@ -116,7 +116,7 @@ import rootSaga from 'redux/sagas/Auth'
 		            <ChartWidget 
 			            series={uniqueVisitorsData.series} 
 			            xAxis={uniqueVisitorsData.categories} 
-			            title="Ingresos Versus Egregos"
+			            title="Ingresos Versus Egresos"
 			            height={410}
 			            type="bar"
 			            customOptions={
