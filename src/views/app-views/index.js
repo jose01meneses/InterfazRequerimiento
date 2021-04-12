@@ -10,7 +10,7 @@ export const AppViews = () => {
       <Switch>
         <Route path={`${APP_PREFIX_PATH}/login`} component={Login} />
         <Route path={`${APP_PREFIX_PATH}/dashboards`} component={lazy(() => import(`./dashboards`))} />
-        <Redirect from={`${APP_PREFIX_PATH}`} to={`${APP_PREFIX_PATH}/login`} />
+        <Redirect from={`${APP_PREFIX_PATH}`} to={`${APP_PREFIX_PATH}/dashboards`} />
       </Switch>
     </Suspense>
   )

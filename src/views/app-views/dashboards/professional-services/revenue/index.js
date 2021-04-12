@@ -4,7 +4,9 @@ import AddForm from '../../../AddForm'
 const revenue = () => {
 
     return (
-        <AddForm/>
+        <AddForm 
+        tipovista = {1}
+        />
 
 
     )

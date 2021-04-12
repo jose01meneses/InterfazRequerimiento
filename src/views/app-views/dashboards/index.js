@@ -8,7 +8,6 @@ import Blog from './blog';
 
 const Dashboards = ({ match }) => {
   return(
-    <Suspense fallback={<Loading cover="content"/>}>
       <Switch>
         <Route path={`${match.url}/personal`} component={Personal} />
         <Route path={`${match.url}/business`} component={Business} />
@@ -16,7 +15,6 @@ const Dashboards = ({ match }) => {
         <Route path={`${match.url}/blog`} component={Blog} />
         <Redirect from={`${match.url}`} to={`${match.url}/personal`} />
       </Switch>
-    </Suspense>
   )
 };
 

@@ -44,7 +44,7 @@ export const LoginForm = (props) => {
 			showAuthMessage(e)
 		})*/
 
-		window.location = "https://www.tutorialspoint.com";
+		window.location = "/app";
 	};
 
 	const onGoogleLogin = () => {
