@@ -3,11 +3,11 @@ import React from 'react'
 import ChartWidget from '../../../../../components/shared-components/ChartWidget'
 import CustomStatistic from '../../../../../components/shared-components/CustomStatistic'
 import DonutChartWidget from '../../../../../components/shared-components/DonutChartWidget'
-import StatisticWidget from '../../../../../components/shared-components/StatisticWidget'
+
 import Flex from '../../../../../components/shared-components/Flex'
 import { Card, Col, Badge } from 'antd'
 
-import rootSaga from 'redux/sagas/Auth'
+
  const generalBalance = () => {
     
 
@@ -167,12 +167,7 @@ import rootSaga from 'redux/sagas/Auth'
 			            }
 			
 		            />
-                </row>
-
-
-
-
-				
+                </row>			
         </div>
 	)
 }

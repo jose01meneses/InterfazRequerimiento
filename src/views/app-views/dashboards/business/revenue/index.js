@@ -5,7 +5,7 @@ const revenue = () => {
 
     return (
         <AddForm 
-        tipovista = {5}
+        tipovista = {1}
         />
 
 
