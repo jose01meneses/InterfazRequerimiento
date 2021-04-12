@@ -38,7 +38,7 @@ export const faqList = [
 				{
 					key: "faq-1-1",
 					title: "Como registrar un ingreso",
-					desc: "Para registrar un ingreso... "
+					desc: "Para registrar un ingreso se debe... "
 				}
 				
 				
@@ -52,7 +52,7 @@ export const faqList = [
 				{
 					key: "faq-1-1",
 					title: "Como registrar un egreso",
-					desc: "Para registrar un egreso..."
+					desc: "Para registrar un egreso se debe..."
 				}
 
 			]
