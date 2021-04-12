@@ -71,7 +71,7 @@ export class Faq extends Component {
 						</Collapse>
 
 						<div class="ant-form-item-control-input-content">
-								<textarea rows="4" id="advanced_search_description" class="ant-input"  placeholder="Escribe un comentario"></textarea>
+								<textarea rows="4" id="advanced_search_description" class="ant-input"></textarea>
 							</div>
 
 							<div class="d-md-flex py-2 flex-row align-items-center justify-content-between">
