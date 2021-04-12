@@ -5,17 +5,18 @@ import { MailOutlined, LockOutlined } from '@ant-design/icons';
 import PropTypes from 'prop-types';
 import { GoogleSVG, FacebookSVG } from 'assets/svg/icon';
 import CustomIcon from 'components/util-components/CustomIcon'
-import {  
+import { 
+	signIn, 
 	showLoading, 
 	showAuthMessage, 
-	hideAuthMessage,
-	authenticated
+	hideAuthMessage, 
+	signInWithGoogle, 
+	signInWithFacebook 
 } from 'redux/actions/Auth';
-import JwtAuthService from 'services/JwtAuthService'
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion"
 
-export const LoginForm = (props) => {
+export const LoginForm = props => {
 	let history = useHistory();
 
 	const { 
@@ -24,35 +25,36 @@ export const LoginForm = (props) => {
 		hideAuthMessage,
 		onForgetPasswordClick,
 		showLoading,
-		extra,
+		signInWithGoogle,
+		signInWithFacebook,
+		extra, 
+		signIn, 
+		token, 
 		loading,
+		redirect,
 		showMessage,
 		message,
-		authenticated,
-		showAuthMessage,
-		token,
-		redirect,
 		allowRedirect
 	} = props
 
+	const initialCredential = {
+		email: 'user1@themenate.net',
+		password: '2005ipo'
+	}
+
 	const onLogin = values => {
 		showLoading()
-		/*const fakeToken = 'fakeToken'
-		JwtAuthService.login(values).then(resp => {
-			authenticated(fakeToken)
-		}).then(e => {
-			showAuthMessage(e)
-		})*/
-
-		window.location = "https://www.tutorialspoint.com";
+		signIn(values);
 	};
 
 	const onGoogleLogin = () => {
 		showLoading()
+		signInWithGoogle()
 	}
 
 	const onFacebookLogin = () => {
 		showLoading()
+		signInWithFacebook()
 	}
 
 	useEffect(() => {
@@ -61,8 +63,8 @@ export const LoginForm = (props) => {
 		}
 		if(showMessage) {
 			setTimeout(() => {
-			hideAuthMessage();
-		}, 3000);
+				hideAuthMessage();
+			}, 3000);
 		}
 	});
 	
@@ -103,7 +105,8 @@ export const LoginForm = (props) => {
 			</motion.div>
 			<Form 
 				layout="vertical" 
-				name="login-form"
+				name="login-form" 
+				initialValues={initialCredential}
 				onFinish={onLogin}
 			>
 				<Form.Item 
@@ -176,14 +179,16 @@ LoginForm.defaultProps = {
 
 const mapStateToProps = ({auth}) => {
 	const {loading, message, showMessage, token, redirect} = auth;
-  	return {loading, message, showMessage, token, redirect}
+  return {loading, message, showMessage, token, redirect}
 }
 
 const mapDispatchToProps = {
+	signIn,
 	showAuthMessage,
 	showLoading,
 	hideAuthMessage,
-	authenticated
+	signInWithGoogle,
+	signInWithFacebook
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

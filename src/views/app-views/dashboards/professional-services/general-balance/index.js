@@ -116,7 +116,7 @@ import { Card, Col, Badge } from 'antd'
 		            <ChartWidget 
 			            series={uniqueVisitorsData.series} 
 			            xAxis={uniqueVisitorsData.categories} 
-			            title="Ingresos Versus Egregos"
+			            title="Ingresos Versus Egresos"
 			            height={410}
 			            type="bar"
 			            customOptions={
