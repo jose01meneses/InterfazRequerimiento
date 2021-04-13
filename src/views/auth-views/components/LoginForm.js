@@ -62,7 +62,7 @@ export const LoginForm = (props) => {
 	const renderOtherSignIn = (
 		<div>
 			<Divider>
-				<span className="text-muted font-size-base font-weight-normal">or connect with</span>
+				<span className="text-muted font-size-base font-weight-normal">O conéctate con</span>
 			</Divider>
 			<div className="d-flex justify-content-center">
 				<Button 
@@ -101,7 +101,7 @@ export const LoginForm = (props) => {
 			>
 				<Form.Item 
 					name="email" 
-					label="Email" 
+					label="Correo electrónico" 
 					rules={[
 						{ 
 							required: true,
@@ -118,14 +118,14 @@ export const LoginForm = (props) => {
 					name="password" 
 					label={
 						<div className={`${showForgetPassword? 'd-flex justify-content-between w-100 align-items-center' : ''}`}>
-							<span>Password</span>
+							<span>Contraseña</span>
 							{
 								showForgetPassword && 
 								<span 
 									onClick={() => onForgetPasswordClick} 
 									className="cursor-pointer font-size-sm font-weight-normal text-muted"
 								>
-									Forget Password?
+									¿Olvidaste la contraseña?
 								</span>
 							} 
 						</div>
@@ -141,7 +141,7 @@ export const LoginForm = (props) => {
 				</Form.Item>
 				<Form.Item>
 					<Button type="primary" htmlType="submit" block loading={loading}>
-						Sign In
+						Ingresar
 					</Button>
 				</Form.Item>
 				{

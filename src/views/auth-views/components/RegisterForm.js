@@ -83,8 +83,29 @@ export const RegisterForm = (props) => {
 			</motion.div>
 			<Form form={form} layout="vertical" name="register-form" onFinish={onSignUp}>
 				<Form.Item 
+					name="name" 
+					rules={rules.confirm}
+					label="Nombre" 
+				>
+					<Input className="text-primary"/>
+				</Form.Item>
+				<Form.Item 
+					name="lastname" 
+					rules={rules.confirm}
+					label="Primer Apellido" 
+				>
+					<Input className="text-primary"/>
+				</Form.Item>
+				<Form.Item 
+					name="secondlastname" 
+					rules={rules.confirm}
+					label="Segundo Apellido" 
+				>
+					<Input className="text-primary"/>
+				</Form.Item>
+				<Form.Item 
 					name="email" 
-					label="Email" 
+					label="Correo electrónico" 
 					rules={rules.email}
 					hasFeedback
 				>
@@ -92,7 +113,7 @@ export const RegisterForm = (props) => {
 				</Form.Item>
 				<Form.Item 
 					name="password" 
-					label="Password" 
+					label="Contraseña" 
 					rules={rules.password}
 					hasFeedback
 				>
@@ -100,7 +121,7 @@ export const RegisterForm = (props) => {
 				</Form.Item>
 				<Form.Item 
 					name="confirm" 
-					label="ConfirmPassword" 
+					label="Confirmar contraseña" 
 					rules={rules.confirm}
 					hasFeedback
 				>
@@ -108,7 +129,7 @@ export const RegisterForm = (props) => {
 				</Form.Item>
 				<Form.Item>
 					<Button type="primary" htmlType="submit" block loading={loading}>
-						Sign Up
+						Registrarse
 					</Button>
 				</Form.Item>
 			</Form>
