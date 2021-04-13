@@ -11,7 +11,7 @@ import {
 	hideAuthMessage,
 	authenticated
 } from 'redux/actions/Auth';
-import JwtAuthService from 'services/JwtAuthService'
+
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion"
 
@@ -28,8 +28,6 @@ export const LoginForm = (props) => {
 		loading,
 		showMessage,
 		message,
-		authenticated,
-		showAuthMessage,
 		token,
 		redirect,
 		allowRedirect
@@ -37,12 +35,7 @@ export const LoginForm = (props) => {
 
 	const onLogin = values => {
 		showLoading()
-		/*const fakeToken = 'fakeToken'
-		JwtAuthService.login(values).then(resp => {
-			authenticated(fakeToken)
-		}).then(e => {
-			showAuthMessage(e)
-		})*/
+		
 
 		window.location = "/app";
 	};
@@ -182,8 +175,7 @@ const mapStateToProps = ({auth}) => {
 const mapDispatchToProps = {
 	showAuthMessage,
 	showLoading,
-	hideAuthMessage,
-	authenticated
+	hideAuthMessage
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

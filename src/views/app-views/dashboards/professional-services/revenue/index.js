@@ -1,16 +1,8 @@
-import AddForm from '../../../addForm'
-
+import AddForm from "../../../addForm";
 
 const revenue = () => {
-    const title = 'Revenue';
-    return (
-        <AddForm 
-        componentsView= {title}
-        />
+  const title = "Revenue";
+  return <AddForm componentsView={title} />;
+};
 
-
-    )
-
-}
-
-export default revenue
+export default revenue;
