@@ -1,11 +1,11 @@
-import AddForm from '../../../AddForm'
+import AddForm from '../../../addForm'
 
 
 const revenue = () => {
-
+    const title = 'Revenue';
     return (
         <AddForm 
-        tipovista = {1}
+        componentsView= {title}
         />
 
 

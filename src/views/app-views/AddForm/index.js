@@ -16,7 +16,8 @@ const ADD = "ADD";
 const EDIT = "EDIT";
 
 const ProductForm = (props) => {
-const vistainfo = props.tipovista;
+  const viewInfo = props.componentsView;
+
   const { mode = ADD, param } = props;
 
   const [form] = Form.useForm();
@@ -112,7 +113,7 @@ const vistainfo = props.tipovista;
             uploadedImg={uploadedImg}
             uploadLoading={uploadLoading}
             handleUploadChange={handleUploadChange}
-            viewtype={vistainfo}
+            viewtype={viewInfo}
           />
           <div className="container">
             <Flex

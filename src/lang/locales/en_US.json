@@ -153,5 +153,11 @@
 
 	"sidenav.docs": "Docs",
 	"sidenav.docs.documentation": "Documentation",
-	"sidenav.docs.changelog": "Changelog"
+	"sidenav.docs.changelog": "Changelog",
+
+
+	
+	"profesional.services.input.number": "El monto no puede ser igual a cero"
+
+
 }
