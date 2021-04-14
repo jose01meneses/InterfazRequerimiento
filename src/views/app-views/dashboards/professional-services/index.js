@@ -17,7 +17,10 @@ const ProfessionalServices = ({ match }) => {
   return(
     <Suspense fallback={<Loading cover="content"/>}>
       <Switch>
-        <Route path={`${match.url}/general-balance`} component={generalBalance} />
+        <Route
+          path={`${match.url}/general-balance`}
+          component={generalBalance}
+        />
         <Route path={`${match.url}/revenue`} component={revenue} />
         <Route path={`${match.url}/capitalexpenses`} component={Capex} />
         <Route path={`${match.url}/cxc`} component={Cxc} />
@@ -29,7 +32,7 @@ const ProfessionalServices = ({ match }) => {
         <Redirect from={`${match.url}`} to={`${match.url}/general-balance`} />
       </Switch>
     </Suspense>
-  )
+  );
 };
 
 export default ProfessionalServices;
