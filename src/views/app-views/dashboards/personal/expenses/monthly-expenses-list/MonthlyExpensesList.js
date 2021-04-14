@@ -16,9 +16,9 @@ const ItemAction = () => (
   <EllipsisDropdown
     menu={
       <Menu>
-        <Menu.Item key="0">
+        <Menu.Item>
           <EyeOutlined />
-          <span>
+          <span >
             <Link to="./expense-detail">Ver detalle</Link>
           </span>
         </Menu.Item>

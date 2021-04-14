@@ -9,20 +9,17 @@ import { useHistory } from "react-router-dom";
 import utils from 'utils';
 import TittleList from "./tittleList.json";
 
-/*const getStockStatus = stockCount => {
-	if(stockCount >= 10) {
-		return <><Badge status="success" /><span>In Stock</span></>
-	}
-	if(stockCount < 10 && stockCount > 0) {
-		return <><Badge status="warning" /><span>Limited Stock</span></>
-	}
-	if(stockCount === 0) {
-		return <><Badge status="error" /><span>Out of Stock</span></>
-	}
-	return null
-}*/
+const optionRevenuePF = "RevPersonal";
+const optionExpensePF = "ExpenPersonal";
+const optionRevenuePs = "RevPS";
+const optionCOGS = "COGS";
+const optionSGA = "SGA";
+const optionCapex = "Capex";
+const optionCXC = "CXC";
+const optionCXP = "CXP";
+const optionPayroll = "Payroll";
 
-const ExpenseDetail = (props) => {
+const TransactionList = (props) => {
 	let history = useHistory();
 	const tittleListConst = TittleList.filter(element => element.id === props.viewType)[0];
 	const [list, setList] = useState(ProductListData)
@@ -46,10 +43,10 @@ const ExpenseDetail = (props) => {
 		</Menu>
 	);
 	
-	const addTransaction = () => {
-		history.push(`/app/dashboards/personal/expense/add-expense`)
+	const addTransaction = linkTransaction => {
+		window.location.href = linkTransaction;
 	}
-	
+
 	const viewDetails = row => {
 		history.push(`/app/apps/ecommerce/edit-product/${row.id}`)
 	}
@@ -70,14 +67,14 @@ const ExpenseDetail = (props) => {
 	}
 
 	const setTableColumns = (tittleItems) => {
-		if (tittleItems.id === "RevPersonal" || 
-			tittleItems.id == "ExpenPersonal" || 
-			tittleItems.id === "RevPS" ||
-			tittleItems.id === "COGS" || 
-			tittleItems.id === "SGA" ||
-			tittleItems.id === "Capex" ||
-			tittleItems.id === "CXC" ||
-			tittleItems.id === "CXP") {
+		if (tittleItems.id === optionRevenuePF || 
+			tittleItems.id === optionExpensePF || 
+			tittleItems.id === optionRevenuePs ||
+			tittleItems.id === optionCOGS || 
+			tittleItems.id === optionSGA ||
+			tittleItems.id === optionCapex ||
+			tittleItems.id === optionCXC ||
+			tittleItems.id === optionCXP) {
 			return [
 				{
 					title: 'ID',
@@ -133,59 +130,39 @@ const ExpenseDetail = (props) => {
 					)
 				}
 			]
+		} else if (tittleItems.id === optionPayroll) {
+			return [
+			{
+				title: 'ID',
+				dataIndex: 'id'
+			},
+			{
+				title: tittleItems.column1,
+				dataIndex: 'desc',
+				sorter: (a, b) => utils.antdTableSorter(a, b, 'desc')
+			},
+			{
+				title: tittleItems.column2,
+				dataIndex: 'date',
+				sorter: (a, b) => utils.antdTableSorter(a, b, 'date')
+			},
+			{
+				title: tittleItems.column3,
+				dataIndex: 'price',
+				render: price => (
+					<div>
+						<NumberFormat
+							displayType={'text'} 
+							value={(Math.round(price * 100) / 100).toFixed(2)} 
+							prefix={'$'} 
+							thousandSeparator={true} 
+						/>
+					</div>
+				),
+				sorter: (a, b) => utils.antdTableSorter(a, b, 'price')
+			}];
 		}
 	}
-
-	const tableColumns = (progress) => [
-		{
-			title: 'ID',
-			dataIndex: 'id'
-		},
-		{
-			title: 'Ingreso',
-			dataIndex: 'name',
-			sorter: (a, b) => utils.antdTableSorter(a, b, 'name')
-		},
-		{
-			title: 'Fecha',
-			dataIndex: 'category',
-			sorter: (a, b) => utils.antdTableSorter(a, b, 'category')
-		},
-		{
-			title: 'Monto',
-			dataIndex: 'price',
-			render: price => (
-				<div>
-					<NumberFormat
-						displayType={'text'} 
-						value={(Math.round(price * 100) / 100).toFixed(2)} 
-						prefix={'$'} 
-						thousandSeparator={true} 
-					/>
-				</div>
-			),
-			sorter: (a, b) => utils.antdTableSorter(a, b, 'price')
-		},
-		{
-			title: 'Origen',
-			dataIndex: 'stock',
-			sorter: (a, b) => utils.antdTableSorter(a, b, 'stock')
-		},
-		{
-			title: 'Destino',
-			dataIndex: 'destiny',
-			sorter: (a, b) => utils.antdTableSorter(a, b, 'stock')
-		},
-		{
-			title: '',
-			dataIndex: 'actions',
-			render: (_, elm) => (
-				<div className="text-right">
-					<EllipsisDropdown menu={dropdownMenu(elm)}/>
-				</div>
-			)
-		}
-	];
 	
 	const rowSelection = {
 		onChange: (key, rows) => {
@@ -214,7 +191,7 @@ const ExpenseDetail = (props) => {
 					</div>
 				</Flex>
 				<div>
-					<Button onClick={addTransaction} type="primary" icon={<PlusCircleOutlined />} block>Añadir Egreso</Button>
+					<Button onClick={() => addTransaction(tittleListConst.link)} type="primary" icon={<PlusCircleOutlined />} block>{tittleListConst.tittleBtnAdd}</Button>
 				</div>
 			</Flex>
 			<div className="table-responsive">
@@ -233,4 +210,6 @@ const ExpenseDetail = (props) => {
 	)
 }
 
-export default ExpenseDetail
+
+
+export default TransactionList

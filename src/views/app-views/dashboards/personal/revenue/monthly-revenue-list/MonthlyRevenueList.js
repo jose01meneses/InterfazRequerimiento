@@ -18,14 +18,18 @@ const ItemAction = () => (
       <Menu>
         <Menu.Item key="0">
           <EyeOutlined />
-          <span>
-            <Link to="./revenue-detail">Ver detalle</Link>
+          <span onClick={() => redirectToDetail("./revenue-detail")}>
+            Ver detalle
           </span>
         </Menu.Item>
       </Menu>
     }
   />
 );
+
+const redirectToDetail = linkTransaction => {
+		window.location.href = linkTransaction;
+}
 
 const ItemHeader = ({ name, category }) => (
   <div>

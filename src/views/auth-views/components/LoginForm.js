@@ -9,7 +9,6 @@ import {
 	showLoading, 
 	showAuthMessage, 
 	hideAuthMessage,
-	authenticated
 } from 'redux/actions/Auth';
 
 import { useHistory } from "react-router-dom";
