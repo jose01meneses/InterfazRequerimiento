@@ -16,7 +16,7 @@ const Revenue = ({ match }) => {
         <Route path={`${match.url}/revenue-monthly`} component={MonthlyRevenueList} />
         <Route path={`${match.url}/revenue-detail`} component={()  => <TransactionList key={keyConst} viewType={viewTypeParam}/>} />
         <Route path={`${match.url}/add-revenue`} component={() => <AddForm componentsView={title} />} />
-        <Redirect from={`${match.url}`} to={`${match.url}/revenue-detail`} />
+        <Redirect from={`${match.url}`} to={`${match.url}/revenue-monthly`} />
       </Switch>
     </Suspense>
   )

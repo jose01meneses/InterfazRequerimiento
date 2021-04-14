@@ -27,6 +27,7 @@
         "id": "RevPS",
         "pageName": "Detalle de ingresos del mes",
         "tittleBtnAdd": "Añadir Ingreso", 
+        "link": "/app/dashboards/professional-services/revenue/add-revenue",
         "column1": "Descripción",
         "column2": "Fecha",
         "column3": "Monto",
@@ -35,9 +36,10 @@
         "column6": "Frecuencia"
     },
     {
-        "id": "COGS",
+        "id": "COGSPS",
         "pageName": "Detalle de COGS del mes",
-        "tittleBtnAdd": "Añadir COGS", 
+        "tittleBtnAdd": "Añadir COGS",
+        "link": "/app/dashboards/professional-services/cogs/add-cogs",
         "column1": "Descripción",
         "column2": "Fecha",
         "column3": "Monto",
@@ -46,9 +48,10 @@
         "column6": "Num. Factura"
     },
     {
-        "id": "SGA",
+        "id": "SGAPS",
         "pageName": "Detalle de SG&A del mes",
         "tittleBtnAdd": "Añadir SG&A", 
+        "link": "/app/dashboards/professional-services/sga/add-sga",
         "column1": "Descripción",
         "column2": "Fecha",
         "column3": "Monto",
@@ -57,9 +60,10 @@
         "column6": "Num. Factura"
     },
     {
-        "id": "Capex",
+        "id": "capitalPS",
         "pageName": "Detalle de Capex del mes",
         "tittleBtnAdd": "Añadir Capex", 
+        "link": "/app/dashboards/professional-services/capitalexpenses/add-capitalexpenses",
         "column1": "Descripción",
         "column2": "Fecha",
         "column3": "Monto",
@@ -68,9 +72,10 @@
         "column6": "Num. Factura"
     },
     {
-        "id": "CXC",
+        "id": "CXCPS",
         "pageName": "Detalle de Engresos del mes",
         "tittleBtnAdd": "Añadir CXC", 
+        "link": "/app/dashboards/professional-services/cxc/add-cxc",
         "column1": "Descripción",
         "column2": "Monto",
         "column3": "Fecha de registro",
@@ -79,9 +84,10 @@
         "column6": "Cliente"
     },
     {
-        "id": "CXP",
+        "id": "CXPPS",
         "pageName": "Detalle de Engresos del mes",
         "tittleBtnAdd": "Añadir CXP", 
+        "link": "/app/dashboards/professional-services/cxp/add-cxp",
         "column1": "Descripción",
         "column2": "Monto",
         "column3": "Fecha de registro",
@@ -90,9 +96,10 @@
         "column6": "Cliente"
     },
     {
-        "id": "Payroll",
+        "id": "PayrollPS",
         "pageName": "Detalle de Engresos del mes",
         "tittleBtnAdd": "Añadir Planilla", 
+        "link": "/app/dashboards/professional-services/payroll/add-payroll",
         "column1": "Colaborador",
         "column2": "Fecha",
         "column3": "Monto"

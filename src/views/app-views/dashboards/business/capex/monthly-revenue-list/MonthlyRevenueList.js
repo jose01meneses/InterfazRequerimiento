@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import PageHeaderAlt from "components/layout-components/PageHeaderAlt";
 import { Row, Col, Tooltip, Tag, Progress, Avatar, Menu, Card } from "antd";
-import { Link } from "react-router-dom";
 import MonthlyRevenueListData from "./MonthlyRevenueListData";
 import { ClockCircleOutlined, EyeOutlined } from "@ant-design/icons";
 import utils from "utils";
@@ -18,7 +17,7 @@ const ItemAction = () => (
       <Menu>
         <Menu.Item>
           <EyeOutlined />
-          <span onClick={() => redirectToDetail("./revenue-detail")}>
+          <span onClick={() => redirectToDetail("./capitalexpenses-detail")}>
             Ver detalle
           </span>
         </Menu.Item>
@@ -207,7 +206,7 @@ const MonthlyRevenueList = () => {
       <PageHeaderAlt className="border-bottom">
         <div className="container-fluid">
           <Flex justifyContent="between" alignItems="center" className="py-4">
-            <h2>Ingresos Mensuales</h2>
+            <h2>Gastos al Capital Mensual</h2>
           </Flex>
         </div>
       </PageHeaderAlt>

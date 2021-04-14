@@ -12,12 +12,12 @@ import TittleList from "./tittleList.json";
 const optionRevenuePF = "RevPersonal";
 const optionExpensePF = "ExpenPersonal";
 const optionRevenuePs = "RevPS";
-const optionCOGS = "COGS";
-const optionSGA = "SGA";
-const optionCapex = "Capex";
-const optionCXC = "CXC";
-const optionCXP = "CXP";
-const optionPayroll = "Payroll";
+const optionCOGS = "COGSPS";
+const optionSGA = "SGAPS";
+const optionCapex = "capitalPS";
+const optionCXC = "CXCPS";
+const optionCXP = "CXPPS";
+const optionPayroll = "PayrollPS";
 
 const TransactionList = (props) => {
 	let history = useHistory();
@@ -160,6 +160,15 @@ const TransactionList = (props) => {
 					</div>
 				),
 				sorter: (a, b) => utils.antdTableSorter(a, b, 'price')
+			},
+			{
+				title: '',
+				dataIndex: 'actions',
+				render: (_, elm) => (
+					<div className="text-right">
+						<EllipsisDropdown menu={dropdownMenu(elm)}/>
+					</div>
+				)
 			}];
 		}
 	}
