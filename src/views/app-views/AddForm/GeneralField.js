@@ -786,7 +786,7 @@ const GeneralField = (props) => {
       );
     case "blogPost":
       return (
-        <Card>
+        <Card title="Nuevo Post">
           <div className="ant-row">
             <div className="ant-col ant-col-24">
               <Form.Item name="titulo" label="Titulo" rules={rules.description}>
@@ -801,7 +801,7 @@ const GeneralField = (props) => {
                 label="Contenido"
                 rules={rules.description}
               >
-                <Input.TextArea rows={1} />
+                <Input.TextArea rows={4} />
               </Form.Item>
             </div>
           </div>

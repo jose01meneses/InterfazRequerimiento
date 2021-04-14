@@ -6,10 +6,16 @@ import { faqCategories, faqList } from "./faqData";
 import YouTube from "react-youtube";
 const { Panel } = Collapse;
 
+const newTheme = () => {
+  window.location.href = '/app/dashboards/add-blog'
+};
+
 export class Faq extends Component {
   state = {
     curentCategory: "faq-1",
   };
+
+  
 
   render() {
     const { curentCategory } = this.state;
@@ -45,7 +51,7 @@ export class Faq extends Component {
               </Row>
 			  <Row type="flex" justify="center" className="mb-5">
                 <Col xs={24} sm={24} md={12}>
-				<button type="submit" class="ant-btn mr-2">
+				<button type="submit" class="ant-btn mr-2" onClick={() => newTheme()}>
                 <span>Nuevo tema</span>
               </button>
 			  <button type="submit" class="ant-btn mr-2">
