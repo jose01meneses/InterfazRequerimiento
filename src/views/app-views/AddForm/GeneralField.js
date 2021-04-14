@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Input, Card, Form, DatePicker, Select, Checkbox, Button } from "antd";
 import { useIntl } from "react-intl";
 import InputNumber from "components/bananacode-components/InputNumber";
-import editable from "./editable.json"
-
+import editable from "./editable.json";
+import moment from "moment";
 
 const rules = {
   amount: [
@@ -68,13 +68,11 @@ const rules = {
   ],
 };
 
-
-
+const dateFormat = "DD/MM/YYYY";
 
 const { Option } = Select;
 const GeneralField = (props) => {
   const listaJson = useState(editable)[0][0];
-
 
   const intl = useIntl();
   const formatRules = (specificRules) => {
@@ -737,9 +735,11 @@ const GeneralField = (props) => {
                 name="amount"
                 label="Monto"
                 rules={formatRules(rules.amount)}
-                
               >
-                <InputNumber style={{ width: "75%" } } defaultValue= {listaJson.monto} ></InputNumber>
+                <InputNumber
+                  style={{ width: "75%" }}
+                  defaultValue={listaJson.monto}
+                ></InputNumber>
               </Form.Item>
             </div>
             <div className="ant-col ant-col-6">
@@ -750,8 +750,8 @@ const GeneralField = (props) => {
               >
                 <DatePicker
                   style={{ width: "75%" }}
-                  format="DD/MM/YYYY"
-                  defaultValue = {listaJson.fecha.toDateString}
+                  format={dateFormat}
+                  defaultValue={moment(listaJson.fecha, dateFormat)}
                 ></DatePicker>
               </Form.Item>
             </div>
@@ -761,11 +761,13 @@ const GeneralField = (props) => {
                 label="Origen De Ingreso"
                 rules={rules.destiny_origin}
               >
-                <Select style={{ width: "75%" }} defaultValue= {listaJson.origen}>
+                <Select
+                  style={{ width: "75%" }}
+                  defaultValue={listaJson.origen}
+                >
                   <Option value="1">Salario</Option>
                   <Option value="2">Intereses</Option>
                   <Option value="2">Alquiler Casa</Option>
-                  
                 </Select>
               </Form.Item>
             </div>
@@ -775,7 +777,10 @@ const GeneralField = (props) => {
                 label="Destino Del Ingreso"
                 rules={rules.destiny_origin}
               >
-                <Select style={{ width: "75%" }}defaultValue= {listaJson.destino}>
+                <Select
+                  style={{ width: "75%" }}
+                  defaultValue={listaJson.destino}
+                >
                   <Option value="1">Cuenta 55678</Option>
                   <Option value="2">Efectivo</Option>
                 </Select>
@@ -788,9 +793,8 @@ const GeneralField = (props) => {
                 name="description"
                 label="Descripción"
                 rules={rules.description}
-               
               >
-                <Input.TextArea rows={4} defaultValue={listaJson.descripcion}/>
+                <Input.TextArea rows={4} defaultValue={listaJson.descripcion} />
               </Form.Item>
             </div>
           </div>
