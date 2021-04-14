@@ -1,7 +1,7 @@
 import AddForm from "../../../addForm";
 
 const revenue = () => {
-  const title = "Revenue";
+  const title = "COGS";
   return <AddForm componentsView={title} />;
 };
 

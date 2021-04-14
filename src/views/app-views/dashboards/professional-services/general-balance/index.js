@@ -1,10 +1,14 @@
 import { Row } from "antd";
 import React from "react";
 import ChartWidget from "../../../../../components/shared-components/ChartWidget";
-import CustomStatistic from "../../../../../components/shared-components/CustomStatistic";
 import DonutChartWidget from "../../../../../components/shared-components/DonutChartWidget";
 import Flex from "../../../../../components/shared-components/Flex";
-import { Col } from "antd";
+import { Col, Tabs, Card } from "antd";
+const { TabPane } = Tabs;
+
+function callback(key) {
+  console.log(key);
+}
 
 const generalBalance = () => {
   //Barrasdeingresosversusegresos
@@ -56,44 +60,69 @@ const generalBalance = () => {
   return (
     <div>
       <row>
-        <div className="d-flex align-items-center">
-          <div className="mr-5">
-            <CustomStatistic size={"lg"} value={"Enero 2021"} title={""} />
-            <CustomStatistic size={"sm"} value={"Ingresos"} title={"950000"} />
-            <CustomStatistic size={"sm"} value={"COGS"} title={"250000"} />
-            <CustomStatistic size={"sm"} value={"Planilla"} title={"300000"} />
-            <CustomStatistic size={"sm"} value={"SG&A"} title={"130000"} />
-            <CustomStatistic size={"sm"} value={"CAPEX"} title={"0"} />
-            <CustomStatistic size={"lg"} value={"Ganancia"} title={"270000"} />
-          </div>
-
-          <div className="mr-5">
-            <CustomStatistic size={"md"} value={"Febrero 2021"} title={""} />
-            <CustomStatistic size={"sm"} value={"Ingresos"} title={"950000"} />
-            <CustomStatistic size={"sm"} value={"COGS"} title={"250000"} />
-            <CustomStatistic size={"sm"} value={"Planilla"} title={"300000"} />
-            <CustomStatistic size={"sm"} value={"SG&A"} title={"130000"} />
-            <CustomStatistic size={"sm"} value={"CAPEX"} title={"0"} />
-            <CustomStatistic size={"lg"} value={"Ganancia"} title={"270000"} />
-          </div>
-
-          <div className="mr-5">
-            <CustomStatistic size={"lg"} value={"Marzo 2021"} title={""} />
-            <CustomStatistic size={"sm"} value={"Ingresos"} title={"950000"} />
-            <CustomStatistic size={"sm"} value={"COGS"} title={"250000"} />
-            <CustomStatistic size={"sm"} value={"Planilla"} title={"300000"} />
-            <CustomStatistic size={"sm"} value={"SG&A"} title={"130000"} />
-            <CustomStatistic size={"sm"} value={"CAPEX"} title={"0"} />
-            <CustomStatistic size={"lg"} value={"Ganancia"} title={"270000"} />
-          </div>
-          <div className="mr-5">
-            <CustomStatistic size={"lg"} value={"Abril 2021"} title={""} />
-            <CustomStatistic size={"sm"} value={"Ingresos"} title={"950000"} />
-            <CustomStatistic size={"sm"} value={"COGS"} title={"250000"} />
-            <CustomStatistic size={"sm"} value={"Planilla"} title={"300000"} />
-            <CustomStatistic size={"sm"} value={"SG&A"} title={"130000"} />
-            <CustomStatistic size={"sm"} value={"CAPEX"} title={"0"} />
-            <CustomStatistic size={"lg"} value={"Ganancia"} title={"270000"} />
+        <div className="ant-row">
+          <div className="ant-col ant-col-24">
+            <Tabs onChange={callback} type="card">
+              <TabPane tab="Enero 2021" key="1">
+              <div className="ant-col ant-col-4">
+                <Card
+                  title="Balance Enero"
+                  bordered={false}
+                  style={{ width: 300 }}
+                >
+                  <p>Ingresos: 950000</p>
+                  <p>COGS: 250000</p>
+                  <p>Planilla: 300000</p>
+                  <p>SG&A: 130000</p>
+                  <p>CAPEX: 0</p>
+                  <h4>Ganancia Bruta: 270000</h4>
+                </Card>
+                </div>
+              </TabPane>
+              <TabPane tab="Febrero 2021" key="2">
+              <Card
+                  title="Balance Febrero"
+                  bordered={false}
+                  style={{ width: 300 }}
+                >
+                  <p>Ingresos: 750000</p>
+                  <p>COGS: 130000</p>
+                  <p>Planilla: 300000</p>
+                  <p>SG&A: 130000</p>
+                  <p>CAPEX: 0</p>
+                  <h4>Ganancia Bruta: 190000</h4>
+                </Card>
+                
+              </TabPane>
+              <TabPane tab="Marzo 2021" key="3">
+              <Card
+                  title="Balance Marzo"
+                  bordered={false}
+                  style={{ width: 300 }}
+                >
+                  <p>Ingresos: 820000</p>
+                  <p>COGS: 130000</p>
+                  <p>Planilla: 300000</p>
+                  <p>SG&A: 130000</p>
+                  <p>CAPEX: 340000</p>
+                  <h4>Ganancia Bruta: -80000</h4>
+                </Card>
+              </TabPane>
+              <TabPane tab="Abril 2021" key="4">
+              <Card
+                  title="Balance Abril"
+                  bordered={false}
+                  style={{ width: 300 }}
+                >
+                  <p>Ingresos: 500000</p>
+                  <p>COGS: 0</p>
+                  <p>Planilla: 300000</p>
+                  <p>SG&A: 150000</p>
+                  <p>CAPEX: 0</p>
+                  <h4>Ganancia Bruta: 50000</h4>
+                </Card>
+              </TabPane>
+            </Tabs>
           </div>
         </div>
       </row>
