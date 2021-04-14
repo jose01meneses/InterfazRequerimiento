@@ -571,52 +571,29 @@ const GeneralField = (props) => {
       return (
         <Card title="Planilla">
           <div className="ant-row">
-            <div className="ant-col ant-col-6">
+            <div className="ant-col ant-col-8">
               <Form.Item name="amount" label="Monto" rules={rules.amount}>
                 <InputNumber style={{ width: "75%" }}></InputNumber>
               </Form.Item>
             </div>
-            <div className="ant-col ant-col-6">
+            <div className="ant-col ant-col-8">
               <Form.Item
                 name="supplier"
-                label="Proveedor"
+                label="Colaborador"
                 rules={rules.supplier_customer}
               >
                 <Input style={{ width: "75%" }} />
               </Form.Item>
             </div>
-            <div className="ant-col ant-col-6">
-              <Form.Item name="date" label="Fecha De Cobro" rules={rules.date}>
+            <div className="ant-col ant-col-8">
+              <Form.Item name="date" label="Fecha" rules={rules.date}>
                 <DatePicker
                   style={{ width: "75%" }}
                   format="DD/MM/YYYY"
                 ></DatePicker>
               </Form.Item>
             </div>
-            <div className="ant-col ant-col-6">
-              <Form.Item
-                name="state"
-                label="Estado del cobro"
-                rules={rules.state}
-              >
-                <Select style={{ width: "75%" }}>
-                  <Option value="1">Por Pagar</Option>
-                  <Option value="2">Pagado</Option>
-                </Select>
-              </Form.Item>
-            </div>
-          </div>
-          <div className="ant-row">
-            <div className="ant-col ant-col-24">
-              <Form.Item
-                name="description"
-                label="Descripción"
-                rules={rules.description}
-              >
-                <Input.TextArea rows={4} />
-              </Form.Item>
-            </div>
-          </div>
+          </div>  
         </Card>
       );
     case "Taxation":
