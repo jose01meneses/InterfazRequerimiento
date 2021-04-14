@@ -807,6 +807,30 @@ const GeneralField = (props) => {
           </Form.Item>
         </Card>
       );
+    case "blogPost":
+      return (
+        <Card>
+          <div className="ant-row">
+            <div className="ant-col ant-col-24">
+              <Form.Item name="titulo" label="Titulo" rules={rules.description}>
+                <Input.TextArea rows={1} />
+              </Form.Item>
+            </div>
+          </div>
+          <div className="ant-row">
+            <div className="ant-col ant-col-24">
+              <Form.Item
+                name="contenido"
+                label="Contenido"
+                rules={rules.description}
+              >
+                <Input.TextArea rows={1} />
+              </Form.Item>
+            </div>
+          </div>
+        </Card>
+      );
+
     default:
       return <h1>Valor invalido</h1>;
   }
