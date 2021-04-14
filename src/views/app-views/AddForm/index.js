@@ -17,6 +17,10 @@ const EDIT = "EDIT";
 
 const ProductForm = (props) => {
   const viewInfo = props.componentsView;
+  
+  let showButton = (viewInfo === "Taxation" ? true :false );
+  
+  
 
   const { mode = ADD, param } = props;
 
@@ -70,7 +74,7 @@ const ProductForm = (props) => {
         setTimeout(() => {
           setSubmitLoading(false);
           if (mode === ADD) {
-            message.success(`Created ${values.name} to product list`);
+            message.success(`Movimiento agregado`);
           }
           if (mode === EDIT) {
             message.success(`Product saved`);
@@ -83,6 +87,8 @@ const ProductForm = (props) => {
         message.error("Please enter all required field ");
       });
   };
+
+  
 
   return (
     <>
@@ -105,7 +111,7 @@ const ProductForm = (props) => {
               justifyContent="between"
               alignItems="center"
             >
-              <h2 className="mb-3"> Agregar nuevo movimiento </h2>
+              
             </Flex>
           </div>
 
@@ -115,19 +121,23 @@ const ProductForm = (props) => {
             handleUploadChange={handleUploadChange}
             viewtype={viewInfo}
           />
-          <div className="container">
+          
+          <div className="container"  >
             <Flex
               className="py-2"
               mobileFlex={false}
               justifyContent="between"
               alignItems="center"
             >
-              <Button className="mr-2">Cancelar</Button>
+              <Button className="mr-2"
+              hidden ={showButton}
+              >Cancelar</Button>
               <Button
                 type="primary"
                 onClick={() => onFinish()}
                 htmlType="submit"
                 loading={submitLoading}
+                hidden ={showButton}
               >
                 Agregar
               </Button>

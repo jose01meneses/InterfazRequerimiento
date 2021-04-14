@@ -3,14 +3,14 @@ import React from "react";
 import ChartWidget from "../../../../../components/shared-components/ChartWidget";
 import DonutChartWidget from "../../../../../components/shared-components/DonutChartWidget";
 import Flex from "../../../../../components/shared-components/Flex";
-import { Col, Tabs,  } from "antd";
+import { Col, Tabs } from "antd";
 import {
   BarChartOutlined,
   FileDoneOutlined,
-  BankOutlined ,
-  TeamOutlined ,
-  CarOutlined   ,
-  WalletOutlined  ,
+  BankOutlined,
+  TeamOutlined,
+  CarOutlined,
+  WalletOutlined,
 } from "@ant-design/icons";
 import DataDisplayWidget from "components/shared-components/DataDisplayWidget";
 
@@ -74,7 +74,6 @@ const generalBalance = () => {
           <div className="ant-col ant-col-24">
             <Tabs onChange={callback} type="card">
               <TabPane tab="Enero 2021" key="1">
-                
                 <Row>
                   <Col xs={8}>
                     <DataDisplayWidget
@@ -84,7 +83,6 @@ const generalBalance = () => {
                       color="cyan"
                       vertical={true}
                       avatarSize={50}
-                      
                     />
                   </Col>
                   <Col xs={8}>
@@ -99,7 +97,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<TeamOutlined  />}
+                      icon={<TeamOutlined />}
                       value="300.000"
                       title="Planilla"
                       color="orange"
@@ -109,7 +107,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<BankOutlined  />}
+                      icon={<BankOutlined />}
                       value="250.000"
                       title="SG&A"
                       color="geekblue"
@@ -119,7 +117,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<CarOutlined   />}
+                      icon={<CarOutlined />}
                       value="0.00"
                       title="CAPEX"
                       color="purple"
@@ -129,7 +127,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<WalletOutlined  />}
+                      icon={<WalletOutlined />}
                       value="270.000"
                       title="Ganancia Bruta"
                       color="lime"
@@ -140,7 +138,7 @@ const generalBalance = () => {
                 </Row>
               </TabPane>
               <TabPane tab="Febrero 2021" key="2">
-              <Row>
+                <Row>
                   <Col xs={8}>
                     <DataDisplayWidget
                       icon={<FileDoneOutlined />}
@@ -149,7 +147,6 @@ const generalBalance = () => {
                       color="cyan"
                       vertical={true}
                       avatarSize={50}
-                      
                     />
                   </Col>
                   <Col xs={8}>
@@ -164,7 +161,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<TeamOutlined  />}
+                      icon={<TeamOutlined />}
                       value="300.000"
                       title="Planilla"
                       color="orange"
@@ -174,7 +171,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<BankOutlined  />}
+                      icon={<BankOutlined />}
                       value="120.000"
                       title="SG&A"
                       color="geekblue"
@@ -184,7 +181,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<CarOutlined   />}
+                      icon={<CarOutlined />}
                       value="0.00"
                       title="CAPEX"
                       color="purple"
@@ -194,7 +191,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<WalletOutlined  />}
+                      icon={<WalletOutlined />}
                       value="190.000"
                       title="Ganancia Bruta"
                       color="lime"
@@ -205,7 +202,7 @@ const generalBalance = () => {
                 </Row>
               </TabPane>
               <TabPane tab="Marzo 2021" key="3">
-              <Row>
+                <Row>
                   <Col xs={8}>
                     <DataDisplayWidget
                       icon={<FileDoneOutlined />}
@@ -214,7 +211,6 @@ const generalBalance = () => {
                       color="cyan"
                       vertical={true}
                       avatarSize={50}
-                      
                     />
                   </Col>
                   <Col xs={8}>
@@ -229,7 +225,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<TeamOutlined  />}
+                      icon={<TeamOutlined />}
                       value="300.000"
                       title="Planilla"
                       color="orange"
@@ -239,7 +235,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<BankOutlined  />}
+                      icon={<BankOutlined />}
                       value="160.000"
                       title="SG&A"
                       color="geekblue"
@@ -249,7 +245,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<CarOutlined   />}
+                      icon={<CarOutlined />}
                       value="140.000"
                       title="CAPEX"
                       color="purple"
@@ -259,7 +255,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<WalletOutlined  />}
+                      icon={<WalletOutlined />}
                       value="-80.000"
                       title="Ganancia Bruta"
                       color="lime"
@@ -270,7 +266,7 @@ const generalBalance = () => {
                 </Row>
               </TabPane>
               <TabPane tab="Abril 2021" key="4">
-              <Row>
+                <Row>
                   <Col xs={8}>
                     <DataDisplayWidget
                       icon={<FileDoneOutlined />}
@@ -279,7 +275,6 @@ const generalBalance = () => {
                       color="cyan"
                       vertical={true}
                       avatarSize={50}
-                      
                     />
                   </Col>
                   <Col xs={8}>
@@ -294,7 +289,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<TeamOutlined  />}
+                      icon={<TeamOutlined />}
                       value="300.000"
                       title="Planilla"
                       color="orange"
@@ -304,7 +299,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<BankOutlined  />}
+                      icon={<BankOutlined />}
                       value="0.00"
                       title="SG&A"
                       color="geekblue"
@@ -314,7 +309,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<CarOutlined   />}
+                      icon={<CarOutlined />}
                       value="0.00"
                       title="CAPEX"
                       color="purple"
@@ -324,7 +319,7 @@ const generalBalance = () => {
                   </Col>
                   <Col xs={8}>
                     <DataDisplayWidget
-                      icon={<WalletOutlined  />}
+                      icon={<WalletOutlined />}
                       value="50.000"
                       title="Ganancia Bruta"
                       color="lime"

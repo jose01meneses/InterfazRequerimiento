@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Card, Form, DatePicker, Select, Checkbox } from "antd";
+import { Input, Card, Form, DatePicker, Select, Checkbox, Button } from "antd";
 import { useIntl } from "react-intl";
 import InputNumber from "components/bananacode-components/InputNumber";
 
@@ -610,6 +610,113 @@ const GeneralField = (props) => {
               >
                 <Input.TextArea rows={4} />
               </Form.Item>
+            </div>
+          </div>
+        </Card>
+      );
+    case "Taxation":
+      return (
+        <Card title="Alineacion Tributaria y CCSS">
+          <div className="ant-row">
+            <div className="ant-col ant-col-8">
+              <Form.Item name="calcRenta">
+                <Button style={{ width: "75%" }} className="mr-2">
+                  Calcular Renta
+                </Button>
+              </Form.Item>
+              <Form.Item
+                name="dateinitial"
+                label="Fecha De Inicio"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                ></DatePicker>
+              </Form.Item>
+              <Form.Item
+                name="datefinal"
+                label="Fecha De Final"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                ></DatePicker>
+              </Form.Item>
+              <Card style={{ width: "75%" }}>
+                <h4>Monto a Pagar:</h4>
+              </Card>
+              <Button style={{ width: "75%" }} className="mr-2">
+                Agregar Renta
+              </Button>
+            </div>
+
+            <div className="ant-col ant-col-8">
+              <Form.Item name="calcIVA">
+                <Button style={{ width: "75%" }} className="mr-2">
+                  Calcular IVA
+                </Button>
+              </Form.Item>
+              <Form.Item
+                name="date-initial-IVA"
+                label="Fecha De Inicio"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                ></DatePicker>
+              </Form.Item>
+              <Form.Item
+                name="date-final-IVA"
+                label="Fecha De Final"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                ></DatePicker>
+              </Form.Item>
+              <Card style={{ width: "75%" }}>
+                <h4>Monto a Pagar:</h4>
+              </Card>
+              <Button style={{ width: "75%" }} className="mr-2">
+                Agregar IVA
+              </Button>
+            </div>
+            <div className="ant-col ant-col-8">
+              <Form.Item name="calcCCSS">
+                <Button style={{ width: "75%" }} className="mr-2">
+                  Calcular CCSS
+                </Button>
+              </Form.Item>
+              <Form.Item
+                name="date-initial-CCSS"
+                label="Fecha De Inicio"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                ></DatePicker>
+              </Form.Item>
+              <Form.Item
+                name="date-final-CCSS"
+                label="Fecha De Final"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                ></DatePicker>
+              </Form.Item>
+              <Card style={{ width: "75%" }}>
+                <h4>Monto a Pagar:</h4>
+              </Card>
+              <Button style={{ width: "75%" }} className="mr-2">
+                Agregar CCSS
+              </Button>
             </div>
           </div>
         </Card>

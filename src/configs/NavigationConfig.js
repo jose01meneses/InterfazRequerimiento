@@ -151,7 +151,7 @@ const dashBoardNavTree = [{
         //submenu empresa 
         {
           key: 'dashboards-business-generalbalance',
-          path: `${APP_PREFIX_PATH}/dashboards/business/generalbalance`,
+          path: `${APP_PREFIX_PATH}/dashboards/business/general-balance`,
           title: 'sidenav.dashboard.business.generalbalance',
           icon: LineChartOutlined,
           breadcrumb: false,

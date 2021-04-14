@@ -7,9 +7,11 @@ import StatisticWidget from "../../../../../components/shared-components/Statist
 
 import Flex from "../../../../../components/shared-components/Flex";
 import { Col, Badge } from "antd";
+
 const generalBalance = () => {
   //Barrasdeingresosversusegresos
-  const uniqueVisitorsData = {
+
+  const RevenueXExpenses = {
     series: [
       {
         name: "Ingresos",
@@ -18,6 +20,16 @@ const generalBalance = () => {
       {
         name: "Egresos",
         data: [680000, 560000, 900000, 450000],
+      },
+    ],
+    categories: ["Enero", "Febrero", "Marzo", "Abril"],
+  };
+
+  const VisitorChartData = {
+    series: [
+      {
+        name: "Session Duration",
+        data: [950000, 750000, 820000, 500000],
       },
     ],
     categories: ["Enero", "Febrero", "Marzo", "Abril"],
@@ -71,8 +83,8 @@ const generalBalance = () => {
 
       <row>
         <ChartWidget
-          series={uniqueVisitorsData.series}
-          xAxis={uniqueVisitorsData.categories}
+          series={RevenueXExpenses.series}
+          xAxis={RevenueXExpenses.categories}
           title="Ingresos Versus Egresos"
           height={410}
           type="bar"
@@ -111,6 +123,14 @@ const generalBalance = () => {
               </Col>
             </Row>
           }
+        />
+      </row>
+      <row>
+        <ChartWidget
+          title="Ingresos"
+          series={VisitorChartData.series}
+          xAxis={VisitorChartData.categories}
+          height={"400px"}
         />
       </row>
     </div>
