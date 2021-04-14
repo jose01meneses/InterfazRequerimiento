@@ -1,7 +1,7 @@
 import AddForm from "../../../addForm";
 
 const revenue = () => {
-  const title = "Taxation";
+  const title = "Revenue-Editable";
   return <AddForm componentsView={title} />;
 };
 

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input, Card, Form, DatePicker, Select, Checkbox, Button } from "antd";
 import { useIntl } from "react-intl";
 import InputNumber from "components/bananacode-components/InputNumber";
+import editable from "./editable.json"
+
 
 const rules = {
   amount: [
@@ -66,10 +68,15 @@ const rules = {
   ],
 };
 
+
+
+
 const { Option } = Select;
 const GeneralField = (props) => {
-  const intl = useIntl();
+  const listaJson = useState(editable)[0][0];
 
+
+  const intl = useIntl();
   const formatRules = (specificRules) => {
     const newRules = specificRules.map((rule) => {
       return {
@@ -77,7 +84,7 @@ const GeneralField = (props) => {
         message: intl.formatMessage({ id: rule.message }),
       };
     });
-    console.log(newRules);
+
     return newRules;
   };
 
@@ -719,6 +726,81 @@ const GeneralField = (props) => {
               </Button>
             </div>
           </div>
+        </Card>
+      );
+    case "Revenue-Editable":
+      return (
+        <Card title="Editar Ingreso">
+          <div className="ant-row">
+            <div className="ant-col ant-col-6">
+              <Form.Item
+                name="amount"
+                label="Monto"
+                rules={formatRules(rules.amount)}
+                
+              >
+                <InputNumber style={{ width: "75%" } } defaultValue= {listaJson.monto} ></InputNumber>
+              </Form.Item>
+            </div>
+            <div className="ant-col ant-col-6">
+              <Form.Item
+                name="date"
+                label="Fecha De Ingreso"
+                rules={rules.date}
+              >
+                <DatePicker
+                  style={{ width: "75%" }}
+                  format="DD/MM/YYYY"
+                  defaultValue = {listaJson.fecha.toDateString}
+                ></DatePicker>
+              </Form.Item>
+            </div>
+            <div className="ant-col ant-col-6">
+              <Form.Item
+                name="origin"
+                label="Origen De Ingreso"
+                rules={rules.destiny_origin}
+              >
+                <Select style={{ width: "75%" }} defaultValue= {listaJson.origen}>
+                  <Option value="1">Salario</Option>
+                  <Option value="2">Intereses</Option>
+                  <Option value="2">Alquiler Casa</Option>
+                  
+                </Select>
+              </Form.Item>
+            </div>
+            <div className="ant-col ant-col-6">
+              <Form.Item
+                name="destiny"
+                label="Destino Del Ingreso"
+                rules={rules.destiny_origin}
+              >
+                <Select style={{ width: "75%" }}defaultValue= {listaJson.destino}>
+                  <Option value="1">Cuenta 55678</Option>
+                  <Option value="2">Efectivo</Option>
+                </Select>
+              </Form.Item>
+            </div>
+          </div>
+          <div className="ant-row">
+            <div className="ant-col ant-col-24">
+              <Form.Item
+                name="description"
+                label="Descripción"
+                rules={rules.description}
+               
+              >
+                <Input.TextArea rows={4} defaultValue={listaJson.descripcion}/>
+              </Form.Item>
+            </div>
+          </div>
+          <Form.Item
+            name="frequency"
+            label="Frecuencia"
+            rules={rules.frequency}
+          >
+            <Checkbox value="1">¿Es un ingreso recurrente?</Checkbox>
+          </Form.Item>
         </Card>
       );
     default:
