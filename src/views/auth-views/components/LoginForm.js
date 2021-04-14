@@ -60,6 +60,9 @@ export const LoginForm = (props) => {
 	
 	const renderOtherSignIn = (
 		<div>
+			<div className="text-center">
+				<a href="/auth/restore-account">He olvidado mi contraseña/Recuperar usuario bloqueado</a>
+			</div>
 			<Divider>
 				<span className="text-muted font-size-base font-weight-normal">O conéctate con</span>
 			</Divider>

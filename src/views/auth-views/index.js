@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Loading from 'components/shared-components/Loading';
 import { AUTH_PREFIX_PATH } from 'configs/AppConfig'
+import RestoreAccount from './authentication/restore-account';
 
 export const AppViews = () => {
   return (
@@ -9,6 +10,7 @@ export const AppViews = () => {
       <Switch>
         <Route path={`${AUTH_PREFIX_PATH}/login`} component={lazy(() => import(`./authentication/login`))} />
         <Route path={`${AUTH_PREFIX_PATH}/register`} component={lazy(() => import(`./authentication/register-2`))} />
+        <Route path={`${AUTH_PREFIX_PATH}/restore-account`} component={RestoreAccount} />
         {/*<Route path={`${AUTH_PREFIX_PATH}/login-1`} component={lazy(() => import(`./authentication/login-1`))} />
         <Route path={`${AUTH_PREFIX_PATH}/login-2`} component={lazy(() => import(`./authentication/login-2`))} />
         <Route path={`${AUTH_PREFIX_PATH}/register-1`} component={lazy(() => import(`./authentication/register-1`))} />

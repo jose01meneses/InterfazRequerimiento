@@ -9,6 +9,11 @@ import {
   BankOutlined,
   UsergroupAddOutlined,
   SolutionOutlined,
+  SettingOutlined,
+  MailOutlined,
+  LockOutlined,
+  ProfileOutlined,
+  AppstoreOutlined,
   ShopOutlined
 
 } from '@ant-design/icons';
@@ -235,7 +240,51 @@ const dashBoardNavTree = [{
       breadcrumb: false,
       submenu: []
 
-    }
+    },
+
+    //Configuraciones
+    {
+      key: "dashboards-settings",
+      path: `${APP_PREFIX_PATH}/dashboards/settings`,
+      title: "sidenav.dashboard.settings",
+      icon: SettingOutlined,
+      breadcrumb: false,
+      submenu: [
+        //submenu de configuraciones
+        {
+          key: "dashboards-settings-editprofile",
+          path: `${APP_PREFIX_PATH}/dashboards/settings/edit-profile`,
+          title: "sidenav.dashboard.settings.editprofile",
+          icon: ProfileOutlined,
+          breadcrumb: false,
+          submenu: [],
+        },
+        {
+          key: "dashboards-settings-changemail",
+          path: `${APP_PREFIX_PATH}/dashboards/settings/change-mail`,
+          title: "sidenav.dashboard.settings.changemail",
+          icon: MailOutlined,
+          breadcrumb: false,
+          submenu: [],
+        },
+        {
+          key: "dashboards-settings-changepassword",
+          path: `${APP_PREFIX_PATH}/dashboards/settings/change-password`,
+          title: "sidenav.dashboard.settings.changepassword",
+          icon: LockOutlined,
+          breadcrumb: false,
+          submenu: [],
+        },
+        {
+          key: "dashboards-settings-categories",
+          path: `${APP_PREFIX_PATH}/dashboards/settings/categories`,
+          title: "sidenav.dashboard.settings.categories",
+          icon: AppstoreOutlined,
+          breadcrumb: false,
+          submenu: [],
+        },
+      ],
+    },
 
 
   ]

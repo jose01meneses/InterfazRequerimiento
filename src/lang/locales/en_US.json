@@ -33,7 +33,11 @@
 
 	"sidenav.dashboard.blog": "Blog",
 
-
+	"sidenav.dashboard.settings": "Configuraciones",
+	"sidenav.dashboard.settings.editprofile": "Editar Perfil",
+	"sidenav.dashboard.settings.changemail":"Cambiar Correo",
+	"sidenav.dashboard.settings.changepassword":"Cambiar Contraseña",
+	"sidenav.dashboard.settings.categories":"Categorias",
 	
 	"sidenav.apps": "Apps",
 	"sidenav.apps.mail": "Mail",

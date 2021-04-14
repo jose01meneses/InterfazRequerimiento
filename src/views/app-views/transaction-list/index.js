@@ -28,8 +28,8 @@ const TransactionList = (props) => {
 
 	const dropdownMenu = row => (
 		<Menu>
-			<Menu.Item onClick={() => viewDetails(row)}>
-				<Flex alignItems="center">
+			<Menu.Item onClick={() => editTransaction(tittleListConst.linkEdit)}>
+				<Flex alignItems="center" >
 					<EyeOutlined />
 					<span className="ml-2">Modificar</span>
 				</Flex>
@@ -42,13 +42,13 @@ const TransactionList = (props) => {
 			</Menu.Item>
 		</Menu>
 	);
+
+	const editTransaction = linkTransaction => {
+		window.location.href = linkTransaction;
+	}
 	
 	const addTransaction = linkTransaction => {
 		window.location.href = linkTransaction;
-	}
-
-	const viewDetails = row => {
-		history.push(`/app/apps/ecommerce/edit-product/${row.id}`)
 	}
 	
 	const deleteRow = row => {
